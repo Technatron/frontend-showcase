@@ -1,6 +1,7 @@
 import Hero from './components/Hero'
 import About from './components/About'
 import NavBar from './components/NavBar'
+import Features from './components/Features'
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Hero/>
       {/* <section className='z-0 min-h-screen'></section> */}
       <About/>
+      <Features/>
     </main>
     </>
   )

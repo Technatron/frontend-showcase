@@ -1,13 +1,19 @@
 import { useEffect, useRef, useState } from "react"
 import ButtonOne from "./ButtonOne";
 import { TiLocationArrow } from "react-icons/ti";
+import { useWindowScroll } from "react-use";
+import gsap from "gsap";
 
 const NavBar = () => {
 
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
     const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [isNavVisible, setIsNavVisible] = useState(false);
 
-    const NavRef = useRef(null);
+    const { y: currentScrollY} = useWindowScroll();
+
+    const NavRef = useRef<HTMLDivElement>(null);
     const AudioRef = useRef<HTMLAudioElement>(null);
 
     //options on a navbar for an MMORPG website
@@ -23,6 +29,31 @@ const NavBar = () => {
         setIsAudioPlaying( prev => !prev);
         setIsIndicatorActive( prev => !prev);
     };
+
+    useEffect(() => {
+        if(currentScrollY==0){
+            setIsNavVisible(true);
+            NavRef.current?.classList.remove('floating-nav');
+        }else if( currentScrollY > lastScrollY){
+            setIsNavVisible(false);
+            NavRef.current?.classList.add('floating-nav');
+        }else if(currentScrollY < lastScrollY){
+            setIsNavVisible(true);
+            NavRef.current?.classList.add('floating-nav');
+        }
+
+        setLastScrollY(currentScrollY);
+    }, [currentScrollY])
+
+    useEffect(() => {
+        gsap.to(NavRef.current, {
+            y: isNavVisible? 0: -100,
+            opacity: isNavVisible? 1: 0,
+            duration: 0.7
+        })
+    }, [isNavVisible])
+    
+    
 
     useEffect(() => {
         if(isAudioPlaying){
@@ -64,7 +95,7 @@ const NavBar = () => {
                         </div>
 
                        <button
-                       className="ml-10 flex  items-center space-x-0.5  px-4 py-1 "
+                       className="ml-10 flex  items-center space-x-0.5 px-4 py-1 "
                        onClick={toggleAudioIndicator}
                        >
                         <audio 
