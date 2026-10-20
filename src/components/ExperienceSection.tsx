@@ -40,7 +40,7 @@ const ExperienceSection = () => {
                                 <img
                                     ref={expRef}
                                     className="object-contain "
-                                    src={"/img/entrance.webp"} alt="experience"
+                                    src={`${import.meta.env.BASE_URL}/img/entrance.webp`} alt="experience"
                                     onMouseMove={handleMouseIn}
                                     onMouseLeave={handleMouseOut}
                                     onMouseUp={handleMouseOut}

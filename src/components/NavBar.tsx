@@ -73,7 +73,7 @@ const NavBar = () => {
             className="absolute top-1/2 w-full -translate-y-1/2">
                 <nav className="flex size-full items-center justify-between p-4">
                     <div className="flex items-center gap-7">
-                        <img src="/img/logo.png" alt="logo" className="w-10" />
+                        <img src={`${import.meta.env.BASE_URL}/img/logo.png`} alt="logo" className="w-10" />
                         <ButtonOne
                         id="product-button"
                         title="Products"
@@ -99,7 +99,7 @@ const NavBar = () => {
                        onClick={toggleAudioIndicator}
                        >
                         <audio 
-                        src="/audio/loop.mp3" 
+                        src={`${import.meta.env.BASE_URL}/audio/loop.mp3`} 
                         ref={AudioRef}
                         className="hidden"
                         loop

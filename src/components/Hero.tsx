@@ -77,7 +77,9 @@ const Hero = () => {
         console.log(currentIndex);
     }
 
-    const getVideoUrl = (index:number) => `/videos/hero-${index}.mp4`;
+    // const getVideoUrl = (index:number) => `/videos/hero-${index}.mp4`;
+    const getVideoUrl = (index: number) => `${import.meta.env.BASE_URL}/videos/hero-${index}.mp4`;
+
 
 
     const handleVideoLoad = () => {

@@ -64,7 +64,7 @@ const Features = () => {
 
                 <CardTilted className="border-hsla relative mt-10 mb-7 h-96 w-full overflow-hidden rounded-md  md:h-[65vh]">
                     <BentoCardComponent
-                    src = "/videos/feature-1.mp4"
+                    src = {`${import.meta.env.BASE_URL}/videos/feature-1.mp4`}
                     title = {"Dashboard"}
                     description = {"Your personal Dashboard powered by React"}
                     isComingSoon
@@ -89,7 +89,7 @@ const Features = () => {
                 <div className="flex flex-col md:flex-row overflow-hidden gap-3" style={{ height: 'auto', minHeight: '400px' }}>
                     <CardTilted className="border-hsla rounded-md w-full md:w-1/2 h-64 md:h-auto">
                         <BentoCardComponent
-                            src={"/videos/feature-2.mp4"}
+                            src={`${import.meta.env.BASE_URL}/videos/feature-2.mp4`}
                             title={"Beyond Excellence"}
                             description={""}
                             isComingSoon
@@ -98,7 +98,7 @@ const Features = () => {
                     <div className="flex flex-col w-full md:w-1/2 gap-2">
                         <CardTilted className=" border-hsla h-64 lg:h-1/2 w-full rounded-md overflow-hidden">
                             <BentoCardComponent
-                                src={"/videos/feature-3.mp4"}
+                                src={`${import.meta.env.BASE_URL}/videos/feature-3.mp4`}
                                 title={"Title Two"}
                                 description={""}
                                 isComingSoon
@@ -106,7 +106,7 @@ const Features = () => {
                         </CardTilted>
                         <CardTilted className="border-hsla h-64 lg:h-1/2 w-full rounded-md overflow-hidden">
                             <BentoCardComponent
-                                src={"/videos/feature-4.mp4"}
+                                src={`${import.meta.env.BASE_URL}/videos/feature-4.mp4`}
                                 title={"Title Three"}
                                 description={""}
                                 isComingSoon
@@ -123,7 +123,7 @@ const Features = () => {
                         </span>
                     </CardTilted>
                     <CardTilted className="border-hsla w-1/2 rounded-md ">
-                        <video src={"/videos/feature-5.mp4" }
+                        <video src={`${import.meta.env.BASE_URL}/videos/feature-5.mp4`}
                         className="object-cover size-full object-center rounded-md"
                         autoPlay
                         loop
