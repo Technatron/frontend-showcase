@@ -48,9 +48,22 @@ const Hero = () => {
     useGSAP(
         () => {
             gsap.set('#video-frame', {
-                clipPath: 'polygon(99.75% 16.3%, 74.53% 58.96%, 99.75% 99.75%, 0% 37.31%, 0% 0%)',
-                borderRadius: '40% 40% 10% 50%'
+                clipPath: 'polygon(0.45% 28.88%, 78.9% 0%, 93.82% 100%, 13.63% 100%)',
             })
+
+            // In the second useGSAP block, after the gsap.from('#video-frame', ...) call, add:
+
+            // gsap.to('#video-frame', {
+            //     rotateX: 15,
+            //     ease: 'power1.inOut',
+            //     scrollTrigger: {
+            //         trigger: '#video-frame',
+            //         start: 'center center',
+            //         end: 'bottom center',
+            //         scrub: true
+            //     }
+            // })
+
 
             gsap.from('#video-frame', {
                 clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
@@ -87,16 +100,9 @@ const Hero = () => {
     }
 
     return (
-        <div id="home" className='relative h-dvh  w-screen overflow-x-hidden'>
-            {/* {isLoading && (
-                <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
-                    <div className="three-body">
-                        <div className="three-body__dot"></div>
-                        <div className="three-body__dot"></div>
-                        <div className="three-body__dot"></div>
-                    </div>
-                </div>
-            )} */}
+        <div id="home" className='relative h-dvh  w-screen overflow-x-hidden' 
+        style={{ perspective: "1000px"}}
+        >
             <div id='video-frame' className='relative z-10 h-dvh w-screen overflow-x-hidden rounded-lg bg-blue-75'>
                 <div>
                     <div className='flex justify-center items-center mask-clip-path absolute-center z-50 size-80 cursor-pointer overflow-hidden rounded-lg  vid-player-holder'>
@@ -118,7 +124,6 @@ const Hero = () => {
 
                     <video 
                     id="next-video"
-                    // id= "current-video"
                     ref={nextVideoRef}
                     src={getVideoUrl(currentIndex) } 
                     loop autoPlay muted
@@ -126,30 +131,29 @@ const Hero = () => {
                     />
                     
                     <video 
-                    // id="current-video"
                     src={getVideoUrl(currentIndex) } 
                     loop 
-                    // autoPlay 
+                    autoPlay 
                     muted
                     className="absolute left-0 top-0 size-full object-cover object-center ease-in-out duration-400"
                     onLoadedData={handleVideoLoad}
                     />
                 </div>
 
-                <h1 className="font-glitch text-5xl z-40 absolute bottom-5 right-5 text-blue-75 ">
+                <h1 className="font-glitch text-[7rem] z-40 absolute bottom-6 right-16 text-blue-75 ">
                     Explore
                 </h1>
 
                 <div className="absolute left-0 top-0 z-40 size-full">
                     <div className="mt-20 px-5 sm:px-10">
-                        <h1 className="text-5xl font-glitch text-blue-75">CONQUER <BsEmojiDizzy/></h1>
-                        <p className="text-blue-75">Stand amongst the ashes of a <br /> trillion dead souls and ask the ghosts <br /> if honor matters. The silence is your answer."</p>
-                        <ButtonOne id="watch-trailer" title="Watch Trailer" leftIcon={<TiLocationArrow/>} containerClass="bg-yellow-300 flex-center gap-1"/>
+                        <h1 className="text-[7rem] font-glitch text-blue-75">CONQUER </h1>
+                        <p className="text-blue-75 font-circular-web text-2xl ">Stand amongst the ashes of a <br /> trillion dead souls and ask the ghosts <br /> if honor matters. The silence is your answer."</p>
+                        <ButtonOne id="watch-trailer" title="Watch Trailer" leftIcon={<TiLocationArrow/>} containerClass="bg-yellow-300 flex-center gap-1 mt-9"/>
                     </div>
                 </div>
             </div>
 
-            <h1 className="font-glitch text-5xl absolute bottom-5 right-5 text-black ">
+            <h1 className="font-glitch text-[7rem] absolute bottom-6 right-16 text-black ">
                     Explore
             </h1>
 

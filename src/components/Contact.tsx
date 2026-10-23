@@ -17,7 +17,7 @@ const Contact = () => {
     className="my-20 min-h-96  w-screen px-10"
     >
         <div className="relative rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden min-h-120">
-            <div className="absolute -left-20 top-0 hidden h-full w-72  sm:block lg:left-20 lg: w-96">
+            <div className="absolute -left-20 top-0 hidden h-full sm:block lg:left-20 lg: w-96">
             
                 <ImageClipper src={`${import.meta.env.BASE_URL}/img/contact-1.webp`} styleClass={"contact-clip-path-1 absolute -left-20 top-0 hidden h-full w-72  overflow-hidden  sm:block lg:left-20 lg: w-96"}/>
                 <ImageClipper src={`${import.meta.env.BASE_URL}/img/contact-2.webp`} styleClass={"contact-clip-path-2 lg:translate-y-40 translate-y-60"}/>

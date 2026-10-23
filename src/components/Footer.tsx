@@ -6,7 +6,6 @@ import { FaTwitter } from "react-icons/fa";
 
 
 const Footer = () => {
-    // Create An area of object each object contains URL and An icon From react icon library Full Add at least Object in the array
     const socialMediaLinks = [
         {
             url: "https://github.com",

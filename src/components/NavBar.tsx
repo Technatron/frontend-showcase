@@ -16,13 +16,11 @@ const NavBar = () => {
     const NavRef = useRef<HTMLDivElement>(null);
     const AudioRef = useRef<HTMLAudioElement>(null);
 
-    //options on a navbar for an MMORPG website
     const navOptions = [
         {id: 1, title: 'Home'},
-        {id: 2, title: 'Products'},
-        {id: 3, title: 'Services'},
-        {id: 4, title: 'About'},
-        {id: 5, title: 'Contact'},
+        {id: 2, title: 'Features'},
+        {id: 3, title: 'About'},
+        {id: 4, title: 'Contact'},
     ]
 
     const toggleAudioIndicator = () => {
@@ -105,15 +103,6 @@ const NavBar = () => {
                         loop
                         />
                         {
-                            // [1, 2, 3, 4].map( num => (
-                            //     <div 
-                            //     key={num}
-                            //     className={`indicator-line ${isIndicatorActive? 'active': ""}`}
-                            //     style={{animationDelay: `${num*0.1}s`}
-                            //     }
-                            //     >
-                            //     </div>
-                            // ))
                             [1, 2, 3, 4].map(num => (
                               <div
                                 key={num}
